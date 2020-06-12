@@ -16,18 +16,15 @@ namespace PromisConnector
         {
             Program program = new Program();
             program.promis = new Promis();
-            
-            Console.WriteLine(program.promis.config()["username"]);
 
-            //dynamic register = program.promis.register("orgname", "emailaddress", password, "FirstName", "MiddleName", "LastName");
-
-            program.promis.login(program.promis.config()["username"], program.promis.config()["password"], program.promis.config()["entityid"]);
-            dynamic message = program.promis.getConnector();
-            Console.WriteLine(message);
+            program.promis.login(program.promis.config["username"].ToString(), program.promis.config["password"].ToString(), program.promis.config["entityid"].ToString());
 
             program.sendTaxCodes();
             program.sendContacts();
             program.sendInvoice();
+
+            dynamic payments = program.promis.getPayments("?Version=Supplier&Status=PAID&Date=>2020-06-01T00:00:00");
+            Console.WriteLine(payments.ToString());
 
         }
 
