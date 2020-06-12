@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PromisConnector", "PromisConnector\PromisConnector.csproj", "{11C51154-6626-47BE-8F65-4F9B6EF2876A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{76E5FE9D-8ED1-40E7-93B7-73ECF462E624}"
+	ProjectSection(SolutionItems) = preProject
+		config.json = config.json
+		invoice.xml = invoice.xml
+		config.example.json = config.example.json
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{11C51154-6626-47BE-8F65-4F9B6EF2876A}.Debug|x86.ActiveCfg = Debug|x86
+		{11C51154-6626-47BE-8F65-4F9B6EF2876A}.Debug|x86.Build.0 = Debug|x86
+		{11C51154-6626-47BE-8F65-4F9B6EF2876A}.Release|x86.ActiveCfg = Release|x86
+		{11C51154-6626-47BE-8F65-4F9B6EF2876A}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
