@@ -21,9 +21,13 @@ namespace PromisConnector
 
             program.sendTaxCodes();
             program.sendContacts();
-            program.sendInvoice();
+            dynamic invoice = program.sendInvoice();
 
-            dynamic payments = program.promis.getPayments("?Version=Supplier&Status=PAID&Date=>2020-06-01T00:00:00");
+            string invoicePdfPath = @"./invoice.pdf";
+            if (System.Diagnostics.Debugger.IsAttached) invoicePdfPath = @"../../../invoice.pdf";
+            program.promis.sendPDF(invoicePdfPath, invoice["response"]["data"]["Created"][0]["_id"].ToString());
+
+            dynamic payments = program.promis.getPayments("?Version=Supplier&Status=PAID&Date=>2020-06-11");
             Console.WriteLine(payments.ToString());
 
         }

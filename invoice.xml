@@ -6,17 +6,17 @@
         <InvoiceReference>test invoice</InvoiceReference>
         <Date>2016-08-31T00:00:00</Date>
         <DueDate>2016-09-04T00:00:00</DueDate>
-        <TotalInvoice>100</TotalInvoice>
-        <TotalTax>0</TotalTax>
-        <TotalDue>100</TotalDue>
+        <TotalInvoice>110</TotalInvoice>
+        <TotalTax>10</TotalTax>
+        <TotalDue>110</TotalDue>
         <CurrencyCode>AUD</CurrencyCode>
         <Supplier>
             <SupplierID>[ENTITYID]</SupplierID>
         </Supplier>
         <ClientContact>
             <ContactForeignID>b40f61b3-b1ac-478f-909b-065b43f0efc9</ContactForeignID>
-            <Name>PF11</Name>
-            <TaxNumber>12113628789</TaxNumber>
+            <Name>Client Company</Name>
+            <TaxNumber>79608331111</TaxNumber>
             <Addresses>
                 <Address>
                     <Country>Australia</Country>
@@ -36,18 +36,18 @@
                 </Address>
             </Addresses>
             <Emails>
-                <Email>tomsoft@promis.co</Email>
+                <Email>client@promis.co</Email>
             </Emails>
         </ClientContact>
         <LineAmountType>Exclusive</LineAmountType>
         <InvoiceLines>
             <InvoiceLine>
-                <Description>Test ivnvoice line</Description>
+                <Description>Test invoice line</Description>
                 <Quantity>1</Quantity>
                 <UnitAmount>1</UnitAmount>
                 <DiscountRate>0</DiscountRate>
                 <LineAmount>100</LineAmount>
-                <TaxAmount>0</TaxAmount>
+                <TaxAmount>10</TaxAmount>
                 <TaxCodeForeignID>AU-TaxClaimable</TaxCodeForeignID>
                 <TaxCodeType>AU-TaxClaimable</TaxCodeType>
                 <TaxCodePercentage>0.1</TaxCodePercentage>

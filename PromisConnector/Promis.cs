@@ -271,18 +271,18 @@ namespace PromisConnector
             return json;
         }
 
-        public IRestResponse sendPDF()
+        public IRestResponse sendPDF(string pdfPath, string invoiceid)
         {
-            string url = this.config["api_host"] + "/connector/pdf?invoicenumber=INV00825724-b";
+            string url = this.config["api_host"] + "/document/attach?invoiceid=" + invoiceid;
             var client = new RestClient(url);
             var request = new RestRequest(Method.POST);
             request.AddHeader("cache-control", "no-cache");
             request.AddHeader("token", this.access_token);
-            request.AddHeader("Accept", "application/xml");
+            request.AddHeader("Accept", "application/json");
+            request.AddHeader("content-type", "text/plain");
 
-            byte[] content = File.ReadAllBytes(@"Invoice.pdf");
-            request.AddFileBytes("pdf", content, "filename.pdf");
-            request.AddHeader("content-type", "multipart/form-data");
+            byte[] content = File.ReadAllBytes(pdfPath);
+            request.AddFileBytes("pdf", content, "invoice.pdf", "application/pdf");            
 
             IRestResponse response = client.Execute(request);
             return response;
