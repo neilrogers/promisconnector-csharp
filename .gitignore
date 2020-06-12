@@ -1,4 +1,6 @@
 config.json
+dev_config.json
+hospo_config.json
 
 # User-specific files
 *.suo

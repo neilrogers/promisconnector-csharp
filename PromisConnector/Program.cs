@@ -104,10 +104,9 @@ namespace PromisConnector
 
             string invoicexml = File.ReadAllText(invoiceXmlPath);
             //make the invoice unique
-            long epochTicks = new DateTime(1970, 1, 1).Ticks;
-            long now = ((DateTime.Today.Ticks - epochTicks) / TimeSpan.TicksPerSecond);
-            invoicexml = invoicexml.Replace("<InvoiceForeignID>0f07dbd5-60e8-4539-8665-6df58ada8f2a</InvoiceForeignID>", "<InvoiceForeignID>IN-FOREIGN-" + now + "</InvoiceForeignID>");
-            invoicexml = invoicexml.Replace("<InvoiceNumber>INV-0117</InvoiceNumber>", "<InvoiceNumber>INV-" + now + "</InvoiceNumber>");
+            Int32 unixTimestamp = (Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
+            invoicexml = invoicexml.Replace("<InvoiceForeignID>0f07dbd5-60e8-4539-8665-6df58ada8f2a</InvoiceForeignID>", "<InvoiceForeignID>IN-FOREIGN-" + unixTimestamp + "</InvoiceForeignID>");
+            invoicexml = invoicexml.Replace("<InvoiceNumber>INV-0117</InvoiceNumber>", "<InvoiceNumber>INV-" + unixTimestamp + "</InvoiceNumber>");
             invoicexml = invoicexml.Replace("[ENTITYID]", this.promis.entityId);
             dynamic invoiceCreatedResponse = this.promis.postInvoice(invoicexml);
             return invoiceCreatedResponse;
